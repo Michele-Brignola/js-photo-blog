@@ -1,0 +1,36 @@
+#header {
+  background-image: url(../img/wall.png);
+}
+
+#header h1 {
+  font-family: "Edu Tas Beginner", sans-serif;
+  color: black;
+  font-size: 90px;
+}
+
+#main {
+  background-image: url(../img/cork.png);
+}
+
+.cards {
+  height: 400px;
+  max-width: 300px;
+}
+
+.cards::before {
+  content: url(../img/pin.svg);
+  position: absolute;
+  scale: 80%;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -30%);
+}
+
+.cards img {
+  background-color: #8cc438;
+  object-fit: cover;
+}
+
+.cards p {
+  font-family: "Edu Tas Beginner", sans-serif;
+}
