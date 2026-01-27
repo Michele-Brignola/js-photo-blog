@@ -13,7 +13,20 @@
 
 .card {
   width: 18rem;
+  padding: 10px;
   border-radius: 0;
+}
+
+.card-img-top {
+  border-radius: 0;
+}
+
+.card-title {
+  font-family: "Edu Tas Beginner", sans-serif;
+}
+
+.card-text {
+  font-family: "Sometype Mono", monospace;
 }
 
 .card::before {
@@ -23,4 +36,24 @@
   left: 50%;
   top: 0;
   transform: translate(-50%, -30%);
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  inset: 0;
+  background-color: #00000050;
+}
+
+#overlay .btn {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+}
+
+#overlay img {
+  position: absolute;
+  left: 50%;
+  scale: 0.5;
+  transform: translateX(-100%);
 }

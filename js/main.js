@@ -1,25 +1,20 @@
-const cardsRow = document.querySelector("#main .row")
-
-function generateCard(cards) {
-  let cardsHTML = ``
-
-  for (const card of cards) {
-    cardsHTML += 
-      `<div class="col-12 col-md-6 col-lg-4">
-        <div class="card">
-          <img src="${card.url}" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <p class="card-text">${card.date}</p>
-            <h5 class="card-title">${card.title}</h5>
-          </div>
-        </div>
-      </div>`
-  }
-
-  cardsRow.innerHTML = cardsHTML;
-}
-
 const apiUrl = `https://lanciweb.github.io/demo/api/pictures/`
+const cardsRow = document.querySelector("#main .row")
+const overlay = document.querySelector("#overlay")
+const overlayButton = document.querySelector("#overlay .btn")
+
+overlayButton.addEventListener("click", function () {
+  overlay.style.display = "none";
+})
+
 axios.get(apiUrl).then((res) => {
   generateCard(res.data)
+  
+  const cards = document.querySelectorAll(".card")
+  cards.forEach((card, index) => {
+    card.addEventListener("click", function () {
+      overlay.style.display = "inline-block";
+      generateOverlayImg(res.data[index])
+    })
+  })
 })
