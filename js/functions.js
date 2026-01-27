@@ -14,8 +14,3 @@ function generateCard(cards) {
   }
   cardsRow.innerHTML = cardsHTML;
 }
-
-function generateOverlayImg(cardData) {
-  const overlayImg = overlay.querySelector('img')
-  overlayImg.src = cardData.url
-}
