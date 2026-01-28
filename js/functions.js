@@ -1,4 +1,4 @@
-function generateCard(cards) {
+function generateCards(cards) {
   let cardsHTML = ``
   for (const card of cards) {
     cardsHTML += 

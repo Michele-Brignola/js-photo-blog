@@ -9,13 +9,13 @@ overlayButton.addEventListener("click", function () {
 })
 
 axios.get(apiUrl).then((res) => {
-  generateCard(res.data)
+  generateCards(res.data)
   
   const cards = document.querySelectorAll(".card")
   cards.forEach((card) => {
     card.addEventListener("click", function () {
-      overlay.style.display = "inline-block";
-      overlayImg.src = document.querySelector('.card .card-img-top').src
+      overlay.style.display = "block";
+      overlayImg.src = card.querySelector('.card-img-top').src
     })
   })
 })
